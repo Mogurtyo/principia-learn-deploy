@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="480" height="560" role="img" aria-label="Newt, idle">
+  <title>Newt, idle</title>
+  <defs>
+    <clipPath id="ai-wig"><path d="M240 80 C336 80 400 144 400 244 C400 330 374 390 330 410 C294 424 186 424 150 410 C106 390 80 330 80 244 C80 144 144 80 240 80 Z"/></clipPath>
+    <clipPath id="ai-head"><path d="M240 112 C306 112 348 158 348 224 C348 296 308 350 240 350 C172 350 132 296 132 224 C132 158 174 112 240 112 Z"/></clipPath>
+    <clipPath id="ai-coat"><path d="M6 560 C8 476 64 428 146 410 C180 402 208 398 240 398 C272 398 300 402 334 410 C416 428 472 476 474 560 Z"/></clipPath>
+    <clipPath id="ai-lapel"><path d="M240 414 C268 418 296 424 322 430 C310 484 286 520 250 552 C244 557 236 557 230 552 C194 520 170 484 158 430 C184 424 212 418 240 414 Z"/></clipPath>
+    <clipPath id="ai-cravat"><path d="M240 374 C263 374 278 387 281 406 C285 428 281 446 275 456 C270 466 258 470 252 462 C248 457 232 457 228 462 C222 470 210 466 205 456 C199 446 195 428 199 406 C202 387 217 374 240 374 Z"/></clipPath>
+  </defs>
+
+  <g id="figure">
+    <g id="head-assembly">
+
+      <!-- periwig, back mass -->
+      <g id="wig-back">
+        <path d="M240 80 C336 80 400 144 400 244 C400 330 374 390 330 410 C294 424 186 424 150 410 C106 390 80 330 80 244 C80 144 144 80 240 80 Z" fill="#EAE6DA"/>
+        <g clip-path="url(#ai-wig)">
+          <path d="M304 70 C384 132 404 300 332 452 L450 452 L450 70 Z" fill="#CDC5B0"/>
+        </g>
+      </g>
+
+      <!-- neck -->
+      <g id="neck">
+        <path d="M208 318 L272 318 L272 384 C272 398 208 398 208 384 Z" fill="#FFD3A8"/>
+        <path d="M252 318 C259 344 261 372 257 398 C267 396 272 391 272 384 L272 318 Z" fill="#F0B27C"/>
+      </g>
+
+      <!-- head -->
+      <g id="head">
+        <path d="M240 112 C306 112 348 158 348 224 C348 296 308 350 240 350 C172 350 132 296 132 224 C132 158 174 112 240 112 Z" fill="#FFD3A8"/>
+        <g clip-path="url(#ai-head)">
+          <path d="M300 116 C330 172 332 288 290 358 L372 358 L372 116 Z" fill="#F0B27C" opacity=".32"/>
+          <ellipse cx="240" cy="356" rx="56" ry="14" fill="#F0B27C" opacity=".3"/>
+        </g>
+      </g>
+
+      <!-- three aligned roll tiers per side: the Newton tell -->
+      <g id="side-rolls">
+      <ellipse cx="98" cy="206" rx="52" ry="30" fill="#B3AA93"/>
+      <ellipse cx="98" cy="200" rx="52" ry="30" fill="#EAE6DA"/>
+      <path d="M46 200 A52 30 0 0 0 150 200 A52 15.0 0 0 1 46 200 Z" fill="#CDC5B0"/>
+      <ellipse cx="85.5" cy="188.0" rx="20.8" ry="6.6" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="382" cy="206" rx="52" ry="30" fill="#B3AA93"/>
+      <ellipse cx="382" cy="200" rx="52" ry="30" fill="#EAE6DA"/>
+      <path d="M330 200 A52 30 0 0 0 434 200 A52 15.0 0 0 1 330 200 Z" fill="#CDC5B0"/>
+      <ellipse cx="369.5" cy="188.0" rx="20.8" ry="6.6" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="94" cy="262" rx="55" ry="33" fill="#B3AA93"/>
+      <ellipse cx="94" cy="256" rx="55" ry="33" fill="#EAE6DA"/>
+      <path d="M39 256 A55 33 0 0 0 149 256 A55 16.5 0 0 1 39 256 Z" fill="#CDC5B0"/>
+      <ellipse cx="80.8" cy="242.8" rx="22.0" ry="7.3" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="386" cy="262" rx="55" ry="33" fill="#B3AA93"/>
+      <ellipse cx="386" cy="256" rx="55" ry="33" fill="#EAE6DA"/>
+      <path d="M331 256 A55 33 0 0 0 441 256 A55 16.5 0 0 1 331 256 Z" fill="#CDC5B0"/>
+      <ellipse cx="372.8" cy="242.8" rx="22.0" ry="7.3" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="104" cy="316" rx="48" ry="27" fill="#B3AA93"/>
+      <ellipse cx="104" cy="310" rx="48" ry="27" fill="#EAE6DA"/>
+      <path d="M56 310 A48 27 0 0 0 152 310 A48 13.5 0 0 1 56 310 Z" fill="#CDC5B0"/>
+      <ellipse cx="92.5" cy="299.2" rx="19.2" ry="5.9" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="376" cy="316" rx="48" ry="27" fill="#B3AA93"/>
+      <ellipse cx="376" cy="310" rx="48" ry="27" fill="#EAE6DA"/>
+      <path d="M328 310 A48 27 0 0 0 424 310 A48 13.5 0 0 1 328 310 Z" fill="#CDC5B0"/>
+      <ellipse cx="364.5" cy="299.2" rx="19.2" ry="5.9" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="118" cy="364" rx="41" ry="23" fill="#B3AA93"/>
+      <ellipse cx="118" cy="358" rx="41" ry="23" fill="#EAE6DA"/>
+      <path d="M77 358 A41 23 0 0 0 159 358 A41 11.5 0 0 1 77 358 Z" fill="#CDC5B0"/>
+      <ellipse cx="108.2" cy="348.8" rx="16.4" ry="5.1" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="362" cy="364" rx="41" ry="23" fill="#B3AA93"/>
+      <ellipse cx="362" cy="358" rx="41" ry="23" fill="#EAE6DA"/>
+      <path d="M321 358 A41 23 0 0 0 403 358 A41 11.5 0 0 1 321 358 Z" fill="#CDC5B0"/>
+      <ellipse cx="352.2" cy="348.8" rx="16.4" ry="5.1" fill="#F7F4EC" opacity=".7"/>
+      </g>
+
+      <!-- two centred rolls tiering the front of the wig -->
+      <g id="front-rolls">
+      <ellipse cx="240" cy="114" rx="66" ry="38" fill="#B3AA93"/>
+      <ellipse cx="240" cy="108" rx="66" ry="38" fill="#EAE6DA"/>
+      <path d="M174 108 A66 38 0 0 0 306 108 A66 19.0 0 0 1 174 108 Z" fill="#CDC5B0"/>
+      <ellipse cx="224.2" cy="92.8" rx="26.4" ry="8.4" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="146" cy="146" rx="56" ry="34" fill="#B3AA93"/>
+      <ellipse cx="146" cy="140" rx="56" ry="34" fill="#EAE6DA"/>
+      <path d="M90 140 A56 34 0 0 0 202 140 A56 17.0 0 0 1 90 140 Z" fill="#CDC5B0"/>
+      <ellipse cx="132.6" cy="126.4" rx="22.4" ry="7.5" fill="#F7F4EC" opacity=".7"/>
+      <ellipse cx="334" cy="146" rx="56" ry="34" fill="#B3AA93"/>
+      <ellipse cx="334" cy="140" rx="56" ry="34" fill="#EAE6DA"/>
+      <path d="M278 140 A56 34 0 0 0 390 140 A56 17.0 0 0 1 278 140 Z" fill="#CDC5B0"/>
+      <ellipse cx="320.6" cy="126.4" rx="22.4" ry="7.5" fill="#F7F4EC" opacity=".7"/>
+      </g>
+
+      <!-- face -->
+      <g id="face">
+    
+    <ellipse cx="203" cy="238" rx="27" ry="31" fill="#FFFFFF"/>
+    <path d="M176 228 A27 31 0 0 1 230 228 A27 8 0 0 1 176 228 Z" fill="#E2E7EC" opacity=".26"/>
+    <ellipse cx="277" cy="238" rx="27" ry="31" fill="#FFFFFF"/>
+    <path d="M250 228 A27 31 0 0 1 304 228 A27 8 0 0 1 250 228 Z" fill="#E2E7EC" opacity=".26"/>
+    
+    <circle cx="206" cy="242" r="14" fill="#3B2A1C"/>
+    <circle cx="200.96" cy="235.98" r="5.2" fill="#FFFFFF"/>
+    <circle cx="212.02" cy="247.04" r="2.5" fill="#FFFFFF" opacity=".7"/>
+    <circle cx="280" cy="242" r="14" fill="#3B2A1C"/>
+    <circle cx="274.96" cy="235.98" r="5.2" fill="#FFFFFF"/>
+    <circle cx="286.02" cy="247.04" r="2.5" fill="#FFFFFF" opacity=".7"/>
+    <path d="M172 198 Q201.5 183.5 231 191" fill="none" stroke="#B3AA93" stroke-width="12" stroke-linecap="round"/>
+    <path d="M308 198 Q278.5 183.5 249 191" fill="none" stroke="#B3AA93" stroke-width="12" stroke-linecap="round"/>
+    
+    <path d="M240 250 C254 250 266 262 266 274 C266 286 254 292 240 292 C226 292 214 286 214 274 C214 262 226 250 240 250 Z" fill="#F0B27C"/>
+    <path d="M240 250 C250 250 258 256 262 264 C252 258 228 258 218 264 C222 256 230 250 240 250 Z" fill="#FFE6CC" opacity=".9"/>
+    
+    <ellipse cx="169" cy="296" rx="24" ry="13" fill="#FF8A73" opacity=".34"/>
+    <ellipse cx="311" cy="296" rx="24" ry="13" fill="#FF8A73" opacity=".34"/>
+    <path d="M199 306 C212 348 268 348 281 306 C272 324 208 324 199 306 Z" fill="#71262F"/>
+    <path d="M207 321 C222 339 258 339 273 321 C263 334 217 334 207 321 Z" fill="#93343E"/>
+      </g>
+    </g>
+
+    <!-- frock coat -->
+    <g id="coat">
+      <path d="M6 560 C8 476 64 428 146 410 C180 402 208 398 240 398 C272 398 300 402 334 410 C416 428 472 476 474 560 Z" fill="#58CC02"/>
+      <g clip-path="url(#ai-coat)">
+        <path d="M352 386 C424 424 464 486 468 566 L500 566 L500 386 Z" fill="#46A302"/>
+        <path d="M146 410 C180 402 208 398 240 398 C272 398 300 402 334 410 L327 440 C297 429 270 425 240 425 C210 425 183 429 153 440 Z" fill="#46A302"/>
+      </g>
+      <path d="M240 414 C268 418 296 424 322 430 C310 484 286 520 250 552 C244 557 236 557 230 552 C194 520 170 484 158 430 C184 424 212 418 240 414 Z" fill="#46A302"/>
+      <g clip-path="url(#ai-lapel)">
+        <path d="M244 408 C286 452 306 512 306 566 L340 566 L340 408 Z" fill="#3B8A00" opacity=".3"/>
+      </g>
+      
+      <g id="buttons">
+        <circle cx="240" cy="492" r="13" fill="#FFC800"/>
+        <path d="M240 479 A13 13 0 0 1 240 505 A13 7.5 0 0 0 240 479 Z" fill="#E0A600"/>
+        <circle cx="240" cy="532" r="13" fill="#FFC800"/>
+        <path d="M240 519 A13 13 0 0 1 240 545 A13 7.5 0 0 0 240 519 Z" fill="#E0A600"/>
+      </g>
+      
+    </g>
+
+    <!-- cravat: collar band, knot, jabot -->
+    <g id="cravat">
+      <path d="M240 368 C267 368 291 375 300 386 C298 396 288 403 276 407 C259 412 221 412 204 407 C192 403 182 396 180 386 C189 375 213 368 240 368 Z" fill="#FFFFFF"/>
+      <path d="M240 368 C267 368 291 375 300 386 C298 396 288 403 276 407 C260 411 240 413 240 413 Z" fill="#E2E7EC" opacity=".8"/>
+      <path d="M240 374 C263 374 278 387 281 406 C285 428 281 446 275 456 C270 466 258 470 252 462 C248 457 232 457 228 462 C222 470 210 466 205 456 C199 446 195 428 199 406 C202 387 217 374 240 374 Z" fill="#FFFFFF"/>
+      <g clip-path="url(#ai-cravat)">
+        <path d="M259 362 C283 394 285 440 265 474 L318 474 L318 362 Z" fill="#E2E7EC"/>
+        <path d="M222 388 C215 410 216 436 224 458 C211 436 209 408 222 388 Z" fill="#E2E7EC"/>
+        <path d="M258 388 C265 410 264 436 256 458 C269 436 271 408 258 388 Z" fill="#CBD3DA" opacity=".7"/>
+      </g>
+
+    </g>
+  </g>
+
+</svg>
