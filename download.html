@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Principia — download the app</title>
+<meta name="description" content="Download the Principia beta app for Android, or use it in your browser.">
+<style>
+  :root {
+    --green: #58cc02; --green-press: #4aaa02; --blue: #1cb0f6; --blue-press: #1899d6;
+    --ink: #3c3c3c; --wolf: #777; --swan: #e5e5e5; --snow: #fff; --canvas: #f7f7f7;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: ui-rounded, "Segoe UI", "Nunito", system-ui, -apple-system, sans-serif;
+    background: var(--canvas); color: var(--ink);
+    display: flex; min-height: 100vh; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: var(--snow); border: 2px solid var(--swan); border-bottom-width: 4px;
+    border-radius: 18px; padding: 36px 28px; max-width: 520px; width: 100%;
+    text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  }
+  .wordmark { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; }
+  .wordmark .dot { color: var(--green); }
+  h1 { font-size: 1.5rem; margin: 14px 0 6px; }
+  .sub { color: var(--wolf); font-size: .95rem; margin-bottom: 24px; }
+  .btn {
+    display: block; width: 100%; border: none; border-bottom: 4px solid var(--green-press);
+    background: var(--green); color: #fff; font: inherit; font-weight: 800;
+    border-radius: 14px; padding: 16px; cursor: pointer; text-decoration: none;
+    font-size: 1.05rem; margin-bottom: 12px;
+  }
+  .btn:active { border-bottom-width: 0; transform: translateY(4px); margin-bottom: 16px; }
+  .btn.blue { background: var(--blue); border-bottom-color: var(--blue-press); }
+  .qr { margin: 20px auto; width: 176px; height: 176px; border: 2px solid var(--swan);
+    border-radius: 12px; padding: 10px; background: #fff; }
+  .qr img { width: 100%; height: 100%; image-rendering: pixelated; }
+  .steps { text-align: left; color: var(--wolf); font-size: .9rem; margin: 18px 0 6px; padding-left: 20px; }
+  .steps li { margin: 6px 0; }
+  .foot { margin-top: 22px; font-size: .8rem; color: var(--wolf); }
+  .foot a { color: var(--blue); font-weight: 700; text-decoration: none; }
+  .web-link { margin-top: 14px; font-size: .9rem; color: var(--wolf); }
+  .web-link a { color: var(--blue); font-weight: 700; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="wordmark">Principia<span class="dot">.</span></div>
+    <h1>Get the app</h1>
+    <p class="sub">Android beta · free · no account needed</p>
+
+    <a class="btn" href="https://mogurtyo.github.io/principia-learn-deploy/apk/principia-v3.6.0.apk"
+       download="principia-v3.6.0.apk">
+      Download for Android
+    </a>
+
+    <div class="qr" aria-hidden="true">
+      <img src="qr-apk.png" alt="">
+    </div>
+    <p class="sub" style="margin-bottom:0">Or scan on your phone</p>
+
+    <ol class="steps">
+      <li>Tap the download — your browser may warn about unknown sources; that's normal for a beta not on Play Store.</li>
+      <li>Open the downloaded file and allow the install when Android asks.</li>
+      <li>Open Principia and sign in with your name (guest) or email.</li>
+    </ol>
+
+    <p class="web-link">On a computer? <a href="/">Use the web version</a> — same app, nothing to install.</p>
+
+    <p class="foot">
+      Beta test app · progress stored so the module team can see how the app helps learning ·
+      nothing shared · identifiable data deleted when the term ends ·
+      <a href="privacy.html">data protection notice</a>
+    </p>
+  </main>
+</body>
+</html>
