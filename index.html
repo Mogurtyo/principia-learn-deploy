@@ -10,10 +10,29 @@
     <meta property="og:description" content="Interactive practice, exam-style feedback and readiness tracking for university STEM courses." />
     <meta property="og:type" content="website" />
     <title>Principia — Master the Foundations of STEM</title>
-    <script type="module" crossorigin src="./assets/index-DZUmPs2c.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BWeK_8pv.css">
+    <script>
+      /* Paint the right theme on the very first frame. The store only learns the
+         saved theme after an async Preferences read, which on the web is one
+         localStorage key — read it here so a dark-mode learner never gets a
+         white flash on launch. applyTheme() re-runs and agrees a tick later. */
+      ;(function () {
+        try {
+          var raw = localStorage.getItem('CapacitorStorage.principia.settings.v1')
+          var theme = raw ? (JSON.parse(raw) || {}).theme : 'system'
+          if (theme !== 'light' && theme !== 'dark') theme = 'system'
+          var dark =
+            theme === 'dark' ||
+            (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {
+          /* private mode / storage disabled: the store sorts it out on init */
+        }
+      })()
+    </script>
+    <script type="module" crossorigin src="./assets/index-RVYOSuWq.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D38_QT6b.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>
