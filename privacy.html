@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Principia.learn — Data Protection Notice</title>
   <style>
-    :root { color-scheme: light dark; }
+    /* This notice is served standalone from public/, outside the React bundle,
+       so the two brand hexes it uses are copied rather than imported. Keep them
+       in step with src/index.css: --color-champagne #d4af37 and
+       --color-oxford #002147. Everything else is deliberately plain — a data
+       protection notice should read like a document, not like the product. */
+    :root { color-scheme: light dark; --ox-gold: #d4af37; --ox-blue: #002147; }
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       max-width: 720px; margin: 0 auto; padding: 32px 20px 80px;
@@ -16,8 +21,9 @@
     table { border-collapse: collapse; width: 100%; margin: 1em 0; }
     th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; font-size: 0.95rem; }
     th { background: #f0f0f0; }
+    /* champagne with navy ink, not white: white is 2.1:1 on gold */
     .beta { display: inline-block; font-weight: 700; font-size: 0.8rem;
-            background: #58CC02; color: #fff; border-radius: 8px; padding: 2px 10px; }
+            background: var(--ox-gold); color: var(--ox-blue); border-radius: 8px; padding: 2px 10px; }
     @media (prefers-color-scheme: dark) {
       body { background: #121212; color: #eee; }
       th { background: #1e1e1e; } th, td { border-color: #333; }
@@ -37,27 +43,79 @@
     <tr>
       <td>Using the app as a guest</td>
       <td>Only on your own device (browser storage / app data)</td>
-      <td>Your name, lesson progress, scores, mistakes, and daily usage minutes</td>
+      <td>
+        Your name, lesson progress, scores, mistakes and daily usage minutes, plus a
+        rolling record of your most recent questions and lessons — see
+        <a href="#per-question">the per-question record</a> below
+      </td>
     </tr>
     <tr>
-      <td>Signed in with an account</td>
+      <td>Signed in with your Google account</td>
       <td>Your device <em>and</em> your account in our database (Supabase, EU/US cloud)</td>
       <td>Everything above, synced to your account so progress follows you between devices</td>
     </tr>
   </table>
 
+  <h2 id="per-question">The per-question record</h2>
+  <p>
+    Since version 3.9.0 the app keeps a short log of how you work through questions, not
+    only how you scored on them. For each question you meet, it records:
+  </p>
+  <ul>
+    <li><strong>What happened</strong> — whether you answered it correctly, answered it
+      wrongly, or skipped it. A skip is recorded as a skip, not as a wrong answer.</li>
+    <li><strong>How long it took you</strong>, in whole seconds. Anything over ten minutes
+      is recorded as ten minutes, so a question left open while you make a cup of tea does
+      not read as ten minutes of thinking.</li>
+    <li><strong>Which answer you chose</strong> — for a multiple-choice or fill-the-blank
+      question, which of the offered options you picked; for a drag-into-order question,
+      the order you put the steps in, and only when it was wrong.</li>
+    <li><strong>How many mis-taps</strong> you made on a matching exercise before completing it.</li>
+    <li><strong>Which question it was</strong>, as a short fingerprint of the question text.
+      The wording of the question itself is not stored.</li>
+  </ul>
+  <p>
+    For each lesson it also records whether you finished it or left part way through, how
+    far you got, and how long you spent. Previously an abandoned lesson left no trace at
+    all, which made a student who started five lessons and gave up on four of them look
+    identical to one who never opened the app.
+  </p>
+  <p>
+    This log is <strong>capped at the 300 most recent entries</strong> and rolls: once it
+    is full, the oldest entry is dropped each time a new one is added. It is not a
+    full-term history, and it is roughly two to three weeks of steady use.
+  </p>
+  <p>Two limits are deliberate, and the app is built so that they hold:</p>
+  <ul>
+    <li><strong>Nothing you type is stored as text.</strong> The only question type you
+      type into is the numeric one, and only the number the app reads out of what you typed
+      is kept. The characters you actually typed are never stored, never uploaded and never
+      seen by anyone.</li>
+    <li><strong>No record carries a time of day.</strong> Every entry holds a duration and
+      a calendar date, and nothing finer. The app cannot tell — and the module team cannot
+      ask it — whether you were revising at three in the morning, or studying during
+      somebody else's lecture.</li>
+  </ul>
+
   <h2>Why we store it</h2>
   <ul>
     <li><strong>Progress and scores</strong> — so you can pick up where you left off, and so the module team can see whether the app helps learning.</li>
     <li><strong>Daily usage minutes and session counts</strong> — the module team uses these to measure how practice time relates to improvement. They are stored as totals per day; they do not track you in real time and are never linked to anything beyond your account.</li>
+    <li><strong>The per-question record</strong> — so the module team can tell a badly worded
+      question from a genuinely hard one, see which wrong answer tempts people, and find the
+      point in a lesson where students stop. These are questions about the course material,
+      answered across the whole cohort; they are not a report card on any individual.</li>
   </ul>
 
   <h2>Cookies / storage choice</h2>
   <p>
     The app uses device storage (and account storage when you sign in) to keep your progress.
-    There are no advertising or third-party tracking cookies. When you first sign in you can
-    refuse storage — if you refuse, <strong>your progress will not be saved</strong> between
-    visits. You can change this at any time in Settings &rarr; Data &amp; cookies.
+    There are no advertising or third-party tracking cookies. After you sign in, Principia
+    asks in a dialog whether it may save your progress, and asks again each time you sign in
+    afterwards. You can refuse — if you do, <strong>your progress will not be saved</strong>
+    between visits, and because that is easy to tap by accident and impossible to notice
+    until weeks later, refusing asks you to confirm once before it takes effect. You can
+    change your answer at any time in Settings &rarr; Data &amp; cookies.
   </p>
 
   <h2>Who can see it</h2>
@@ -77,7 +135,7 @@
   <h2>Your rights</h2>
   <p>
     You can ask to see or delete everything stored about you at any time: use
-    <em>Settings &rarr; Export progress</em> for a copy, <em>Settings &rarr; Reset progress</em>
+    <em>Settings &rarr; Export progress</em> for a copy, <em>Settings &rarr; Reset all progress</em>
     to delete your device copy, or contact the module team to delete your account and its data.
   </p>
 

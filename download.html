@@ -6,43 +6,129 @@
 <title>Get Principia — download the app</title>
 <meta name="description" content="Download the Principia beta app for Android, or use it in your browser.">
 <style>
+  /* ------------------------------------------------------------------
+     WHY THE BRAND TOKENS ARE COPIED OUT HERE INSTEAD OF IMPORTED.
+
+     This page is not part of the React app. It sits in public/, is shipped
+     byte-for-byte by Vite, and is the page a phone lands on straight from a
+     QR code — often before anything else of the site has ever been fetched.
+     It therefore cannot @import src/index.css (which is a Tailwind entry
+     point compiled at build time, not a servable stylesheet) and must not
+     pull in the app bundle just to colour a card. So the handful of tokens
+     it needs are duplicated below, deliberately.
+
+     WHAT TO KEEP IN SYNC, and with what:
+       --ox-blue / --ox-night / --ox-gold  ->  src/index.css @theme
+             (--color-oxford #002147, --color-ink #0f172a, --color-champagne)
+       --ox-on-gold, --ox-azure            ->  src/styles/landing.css
+             (.landing --ox-on-gold, and --color-azure-deep behind
+              .landing-cta-secondary)
+       the navy gradient + ruled-paper overlay -> .landing-hero in landing.css
+
+     These five hexes have been stable across the whole Modern Oxford
+     rollout; if the palette is ever re-cut, this file is the one place
+     outside src/ that has to be re-cut with it. Nothing else here is
+     load-bearing on the app's CSS.
+
+     WHY THERE IS NO LIGHT VARIANT. The page paints the same fixed navy in
+     both colour schemes, exactly as .landing-hero does. landing.css says
+     why in its own words: the hero is a brand surface rather than a themed
+     background, so its darkest stop and the ink on its gold button cannot
+     follow the theme. This page is one hero-sized card and nothing else, so
+     following that rule costs nothing and keeps the download page and the
+     top of the landing page visually identical.
+     ------------------------------------------------------------------ */
   :root {
-    --green: #58cc02; --green-press: #4aaa02; --blue: #1cb0f6; --blue-press: #1899d6;
-    --ink: #3c3c3c; --wolf: #777; --swan: #e5e5e5; --snow: #fff; --canvas: #f7f7f7;
+    --ox-blue: #002147;
+    --ox-night: #0f172a;
+    --ox-gold: #d4af37;
+    /* navy on gold, not white: white is 2.1:1 on champagne. 7.9:1 this way. */
+    --ox-on-gold: #002147;
+    --ox-azure: #2563eb;
+    --ox-paper: #e2e8f0;
+    /* muted copy on the navy card: 10.9:1, so "muted" here is a weight and a
+       hue rather than the low-contrast grey a light theme can afford */
+    --ox-paper-dim: #cbd5e1;
+    --ox-hairline: rgb(255 255 255 / 0.16);
+    --font-display: ui-serif, Georgia, "Times New Roman", serif;
+    color-scheme: dark;
   }
   * { box-sizing: border-box; margin: 0; }
   body {
-    font-family: ui-rounded, "Segoe UI", "Nunito", system-ui, -apple-system, sans-serif;
-    background: var(--canvas); color: var(--ink);
-    display: flex; min-height: 100vh; align-items: center; justify-content: center;
+    font-family: "Nunito", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: var(--ox-paper);
+    /* the landing hero's exact backdrop: a soft highlight off the top right,
+       over a navy-to-night diagonal */
+    background:
+      radial-gradient(120% 90% at 78% 6%, rgb(255 255 255 / 0.13), transparent 62%),
+      linear-gradient(160deg, var(--ox-blue) 0%, var(--ox-night) 100%);
+    background-attachment: fixed;
+    display: flex; min-height: 100dvh; align-items: center; justify-content: center;
     padding: 24px;
   }
-  .card {
-    background: var(--snow); border: 2px solid var(--swan); border-bottom-width: 4px;
-    border-radius: 18px; padding: 36px 28px; max-width: 520px; width: 100%;
-    text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  /* faint ruled paper, the way a lab notebook is ruled — same rule, same
+     opacity and same 28px pitch as .landing-hero::before */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to bottom, rgb(255 255 255 / 0.05) 0 1px, transparent 1px 28px);
   }
-  .wordmark { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; }
-  .wordmark .dot { color: var(--green); }
-  h1 { font-size: 1.5rem; margin: 14px 0 6px; }
-  .sub { color: var(--wolf); font-size: .95rem; margin-bottom: 24px; }
+  .card {
+    position: relative;
+    background: rgb(255 255 255 / 0.05);
+    border: 1px solid var(--ox-hairline);
+    border-radius: 20px;
+    padding: 36px 28px;
+    max-width: 520px; width: 100%;
+    text-align: center;
+    box-shadow: 0 18px 40px rgb(0 0 0 / 0.28);
+  }
+  /* a serif wordmark against the rounded body face: the one deliberately
+     academic note on the page, as on the landing header */
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.7rem; font-weight: 700; letter-spacing: .02em; line-height: 1;
+    color: #ffffff;
+  }
+  .wordmark .dot { color: var(--ox-gold); }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 1.6rem; font-weight: 700; line-height: 1.2;
+    margin: 16px 0 6px; color: #ffffff;
+  }
+  .sub { color: var(--ox-paper-dim); font-size: .95rem; margin-bottom: 24px; }
+  /* the app's .btn press physics — a 4px lip that the press swallows — with
+     the landing CTA's palette on top */
   .btn {
-    display: block; width: 100%; border: none; border-bottom: 4px solid var(--green-press);
-    background: var(--green); color: #fff; font: inherit; font-weight: 800;
+    display: block; width: 100%; border: none;
+    border-bottom: 4px solid #a8871f;
+    background: var(--ox-gold); color: var(--ox-on-gold);
+    font: inherit; font-weight: 800; font-size: 1.05rem;
     border-radius: 14px; padding: 16px; cursor: pointer; text-decoration: none;
-    font-size: 1.05rem; margin-bottom: 12px;
+    margin-bottom: 12px;
   }
   .btn:active { border-bottom-width: 0; transform: translateY(4px); margin-bottom: 16px; }
-  .btn.blue { background: var(--blue); border-bottom-color: var(--blue-press); }
-  .qr { margin: 20px auto; width: 176px; height: 176px; border: 2px solid var(--swan);
-    border-radius: 12px; padding: 10px; background: #fff; }
+  .btn:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+  /* THE QR PANEL STAYS WHITE, on purpose and in both themes. A QR code is read
+     by contrast between dark modules and a light quiet zone; inverting it or
+     tinting it navy makes it slower to scan on cheap phone cameras and dead on
+     some of them. The white plate is a scanning target, not a styling slip. */
+  .qr {
+    margin: 20px auto; width: 176px; height: 176px;
+    border: 2px solid var(--ox-hairline); border-radius: 12px;
+    padding: 10px; background: #ffffff;
+  }
   .qr img { width: 100%; height: 100%; image-rendering: pixelated; }
-  .steps { text-align: left; color: var(--wolf); font-size: .9rem; margin: 18px 0 6px; padding-left: 20px; }
+  .steps { text-align: left; color: var(--ox-paper-dim); font-size: .9rem; margin: 18px 0 6px; padding-left: 20px; }
   .steps li { margin: 6px 0; }
-  .foot { margin-top: 22px; font-size: .8rem; color: var(--wolf); }
-  .foot a { color: var(--blue); font-weight: 700; text-decoration: none; }
-  .web-link { margin-top: 14px; font-size: .9rem; color: var(--wolf); }
-  .web-link a { color: var(--blue); font-weight: 700; }
+  .steps strong { color: #ffffff; font-weight: 800; }
+  .foot { margin-top: 22px; font-size: .8rem; color: var(--ox-paper-dim); line-height: 1.5; }
+  /* links are gold on navy (7.9:1) rather than the app's azure, which at
+     --color-azure-deep is only 3.1:1 against this backdrop */
+  a:not(.btn) { color: var(--ox-gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .web-link { margin-top: 14px; font-size: .9rem; color: var(--ox-paper-dim); }
 </style>
 </head>
 <body>
@@ -51,8 +137,8 @@
     <h1>Get the app</h1>
     <p class="sub">Android beta · free · no account needed</p>
 
-    <a class="btn" href="https://mogurtyo.github.io/principia-learn-deploy/apk/principia-v3.10.0.apk"
-       download="principia-v3.10.0.apk">
+    <a class="btn" href="https://mogurtyo.github.io/principia-learn-deploy/apk/principia-v3.10.1.apk"
+       download="principia-v3.10.1.apk">
       Download for Android
     </a>
 
@@ -64,7 +150,10 @@
     <ol class="steps">
       <li>Tap the download — your browser may warn about unknown sources; that's normal for a beta not on Play Store.</li>
       <li>Open the downloaded file and allow the install when Android asks.</li>
-      <li>Open Principia and sign in with your name (guest) or email.</li>
+      <!-- Email sign-in was deleted in 3.8.0 and this step outlived it. The gate
+           now offers exactly two doors: Google, or a name typed as a guest.
+           Keep in step with src/screens/LoginScreen.tsx. -->
+      <li>Open Principia and choose <strong>Continue with Google</strong>, or carry on as a guest with just your name.</li>
     </ol>
 
     <p class="web-link">On a computer? <a href="/">Use the web version</a> — same app, nothing to install.</p>
