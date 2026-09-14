@@ -3,6 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <!--
+      Add to Home Screen on iOS, which reads NONE of the above.
+
+      Safari ignores `rel="icon"` when it makes a home-screen icon, and it does
+      not accept SVG for this at all — so the favicon being right did nothing for
+      an iPhone, which fell back to a screenshot of the page. It wants a PNG at
+      `apple-touch-icon`, 180x180 for the @3x iPhone. The artwork is drawn
+      full-bleed on the theme colour because iOS puts nothing behind a touch
+      icon: a transparent PNG composites onto black. iOS applies its own rounded
+      mask, so the file must not be pre-rounded.
+    -->
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <!--
+      The home-screen label. Without this iOS uses <title>, which is
+      "Principia — Master the Foundations of STEM" and gets truncated to
+      something that reads like a bug on the springboard.
+    -->
+    <meta name="apple-mobile-web-app-title" content="Principia" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Every clause here has to name something the build actually ships. The
          previous tail, "Turn lecture notes into exam mastery", promised a thing
@@ -42,7 +60,7 @@
         }
       })()
     </script>
-    <script type="module" crossorigin src="./assets/index-G4bDhtAh.js"></script>
+    <script type="module" crossorigin src="./assets/index-CuExcSEU.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-077Q0v9L.css">
   </head>
   <body>
