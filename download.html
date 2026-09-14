@@ -137,8 +137,15 @@
     <h1>Get the app</h1>
     <p class="sub">Android beta · free · no account needed</p>
 
+    <!-- THIS ONE STAYS ABSOLUTE, unlike every other link on the page. Only the
+         Pages mirror actually carries the APK: the other host answers
+         /apk/principia-v3.10.2.apk with a 200 and its SPA index.html (~2.6 KB
+         of HTML saved as a .apk, which Android then refuses to install). A
+         relative href here would look tidier and hand half our visitors a file
+         that cannot be installed, so it points at the mirror that has it — the
+         same mirror the OTA bundle and the QR code use. -->
     <a class="btn" href="https://mogurtyo.github.io/principia-learn-deploy/apk/principia-v3.10.1.apk"
-       download="principia-v3.10.1.apk">
+       download="principia-v3.10.2.apk">
       Download for Android
     </a>
 
@@ -156,7 +163,15 @@
       <li>Open Principia and choose <strong>Continue with Google</strong>, or carry on as a guest with just your name.</li>
     </ol>
 
-    <p class="web-link">On a computer? <a href="/">Use the web version</a> — same app, nothing to install.</p>
+    <!-- "./", not "/". This page is copied into the build verbatim, so nothing
+         rewrites its links: on GitHub Pages it is served from
+         /principia-learn-deploy/download.html and the root-absolute form sent
+         "use the web version" to https://mogurtyo.github.io/, which is GitHub's
+         404 page — the last thing to show a student who has decided not to
+         install an APK. "./" resolves beside this file on every host, which is
+         exactly where index.html sits (the QR image and the notice below are
+         relative for the same reason). -->
+    <p class="web-link">On a computer? <a href="./">Use the web version</a> — same app, nothing to install.</p>
 
     <p class="foot">
       Beta test app · progress stored so the module team can see how the app helps learning ·
