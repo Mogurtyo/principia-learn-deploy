@@ -1,0 +1,19 @@
+index.html
+  s_698098e9ea6f6f::t_baba44058cda14 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "95ac52bbceed09ebf8aeab2d7f26a02377b07495",
+  "prompts": {},
+  "sessions": {
+    "s_698098e9ea6f6f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32719578-69ad-41f2-8cef-be743ef50796",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Mogurtyo <l3monade.phil@gmail.com>"
+    }
+  }
+}
