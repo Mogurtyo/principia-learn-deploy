@@ -1,0 +1,33 @@
+assets/LessonScreen-CDRaX42a.js
+  s_53655ed3a07b25::t_e7946d696ce21d 1
+assets/Tex-BEmk-0lf.js
+  s_53655ed3a07b25::t_14b5f47711285b 1
+index.html
+  s_698098e9ea6f6f::t_2acfd56473d7f6 63
+ota/version.json
+  s_53655ed3a07b25::t_2f4b3e8b8118a5 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "212ddecaf18a82381175e7dee2f910f42ab6672f",
+  "prompts": {},
+  "sessions": {
+    "s_53655ed3a07b25": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7a7b16b6-73ff-46f1-a9e3-a03dbdcb9b15",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Mogurtyo <l3monade.phil@gmail.com>"
+    },
+    "s_698098e9ea6f6f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32719578-69ad-41f2-8cef-be743ef50796",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Mogurtyo <l3monade.phil@gmail.com>"
+    }
+  }
+}
