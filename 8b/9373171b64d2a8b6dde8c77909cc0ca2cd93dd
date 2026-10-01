@@ -1,0 +1,21 @@
+download.html
+  s_698098e9ea6f6f::t_cb2502faa289fb 142,147-148
+index.html
+  s_698098e9ea6f6f::t_2bcc4c41e62e98 66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8b9373171b64d2a8b6dde8c77909cc0ca2cd93dd",
+  "prompts": {},
+  "sessions": {
+    "s_698098e9ea6f6f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32719578-69ad-41f2-8cef-be743ef50796",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Mogurtyo <l3monade.phil@gmail.com>"
+    }
+  }
+}
