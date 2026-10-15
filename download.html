@@ -139,18 +139,17 @@
 
     <!-- THIS ONE STAYS ABSOLUTE, unlike every other link on the page. Only the
          Pages mirror actually carries the APK: the other host answers
-         /apk/principia-v4.0.2.apk with a 200 and its SPA index.html (~2.6 KB
+         /apk/principia-v4.0.4.apk with a 200 and its SPA index.html (~2.6 KB
          of HTML saved as a .apk, which Android then refuses to install). A
          relative href here would look tidier and hand half our visitors a file
          that cannot be installed, so it points at the mirror that has it — the
          same mirror the OTA bundle and the QR code use.
 
-         THE FILENAME LAGS THE APP VERSION ON PURPOSE. The web has moved to
-         4.0.3 but the APK binary has not been rebuilt, and a link to a version
-         the mirror does not hold is a 404 on the one button this page exists
-         for. Bump this back up in the same commit that uploads the new APK. -->
-    <a class="btn" href="https://mogurtyo.github.io/principia-learn-deploy/apk/principia-v4.0.2.apk"
-       download="principia-v4.0.2.apk">
+         The filename must be bumped in the SAME commit that uploads the APK:
+         a link to a version the mirror does not hold is a 404 on the one
+         button this page exists for. -->
+    <a class="btn" href="https://mogurtyo.github.io/principia-learn-deploy/apk/principia-v4.0.4.apk"
+       download="principia-v4.0.4.apk">
       Download for Android
     </a>
 
